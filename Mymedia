@@ -1,0 +1,2763 @@
+!DOCTYPE html>
+<html lang="en">you
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Mymedia - Create Account</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <div class="logo">Mymedia</div>
+    <div class="login-form">
+      <input type="email" placeholder="Email or phone" />
+      <input type="password" placeholder="Password" />
+      <button>Log In</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="left-section">
+      <h1>Connect with friends and the world around you on Mymedia.</h1>
+      <img src="https://static.xx.fbcdn.net/rsrc.php/v3/yx/r/-XF4FQcre_i.png" alt="Mymedia Connect" />
+    </section>
+
+    <section class="right-section">
+      <div class="signup-box">
+        <h2>Create an account</h2>
+        <p>It's quick and easy.</p>
+        <form id="signupForm">
+          <div class="name-row">
+            <input type="text" id="firstname" name="firstname" placeholder="First name" required />
+            <input type="text" id="lastname" name="lastname" placeholder="Last name" required />
+          </div>
+          <input type="email" id="email" name="email" placeholder="Mobile number or email" required />
+          <input type="password" id="password" name="password" placeholder="New password" required />
+
+          <label>Date of birth</label>
+          <div class="dob">
+            <select id="day" name="day" required>
+              <option value="">Day</option>
+              <!-- Days 1 to 31 -->
+            </select>
+            <select id="month" name="month" required>
+              <option value="">Month</option>
+              <option value="1">Jan</option>
+              <option value="2">Feb</option>
+              <option value="3">Mar</option>
+              <option value="4">Apr</option>
+              <option value="5">May</option>
+              <option value="6">Jun</option>
+              <option value="7">Jul</option>
+              <option value="8">Aug</option>
+              <option value="9">Sep</option>
+              <option value="10">Oct</option>
+              <option value="11">Nov</option>
+              <option value="12">Dec</option>
+            </select>
+            <select id="year" name="year" required>
+              <option value="">Year</option>
+              <!-- Years 1900 to 2025 -->
+            </select>
+          </div>
+
+          <label>Gender</label>
+          <div class="gender">
+            <input type="radio" id="female" name="gender" value="female" required />
+            <label for="female">Female</label>
+            <input type="radio" id="male" name="gender" value="male" required />
+            <label for="male">Male</label>
+            <input type="radio" id="other" name="gender" value="other" required />
+            <label for="other">Other</label>
+          </div>
+
+          <button type="submit">Sign Up</button>
+        </form>
+        <p class="terms">
+          By clicking Sign Up, you agree to our <a href="#">Terms</a>, <a href="#">Privacy Policy</a> and <a href="#">Cookies Policy</a>.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>Mymedia © 2025</p>
+  </footer>
+
+  <script src="script.js"></script>
+  <script>
+    // Populate day and year dropdown dynamically
+    const daySelect = document.getElementById('day');
+    for (let i = 1; i <= 31; i++) {
+      daySelect.innerHTML += `<option value="${i}">${i}</option>`;
+    }
+
+    const yearSelect = document.getElementById('year');
+    for (let y = 2025; y >= 1900; y--) {
+      yearSelect.innerHTML += `<option value="${y}">${y}</option>`;
+    }
+  </script>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Mymedia - News Feed</title>
+    <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+    <!-- Header/Navbar -->
+    <header class="navbar">
+        <div class="logo">Mymedia</div>
+        <div class="search-box">
+            <input type="text" placeholder="Search Mymedia" />
+        </div>
+        <nav class="nav-icons">
+            <button title="Home" class="icon-btn">🏠</button>
+            <button title="Friend Requests" class="icon-btn">👥</button>
+            <button title="Messenger" class="icon-btn">💬</button>
+            <button title="Notifications" class="icon-btn">🔔</button>
+            <div class="profile-dropdown">
+                <img src="profile.jpg" alt="User Profile" class="profile-pic" />
+                <div class="dropdown-content">
+                    <a href="#">Profile</a>
+                    <a href="#">Settings</a>
+                    <a href="#">Logout</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <div class="container">
+
+        <!-- Left Sidebar -->
+        <aside class="sidebar left-sidebar">
+            <ul>
+                <li><a href="#">My Profile</a></li>
+                <li><a href="#">Friends</a></li>
+                <li><a href="#">Groups</a></li>
+                <li><a href="#">Pages</a></li>
+                <li><a href="#">Events</a></li>
+                <li><a href="#">Saved Items</a></li>
+                <li><a href="#">Marketplace</a></li>
+            </ul>
+        </aside>
+
+        <!-- Center Content / News Feed -->
+        <main class="main-content">
+            <section class="post-box">
+                <textarea placeholder="What's on your mind?"></textarea>
+                <button id="postBtn">Post</button>
+            </section>
+            <section class="feed" id="feed">
+                <!-- Posts will appear here -->
+            </section>
+        </main>
+
+        <!-- Right Sidebar -->
+        <aside class="sidebar right-sidebar">
+            <div class="trending-news">
+                <h3>Trending News</h3>
+                <ul>
+                    <li><a href="#">News Item 1</a></li>
+                    <li><a href="#">News Item 2</a></li>
+                    <li><a href="#">News Item 3</a></li>
+                </ul>
+            </div>
+            <div class="friend-activity">
+                <h3>Friend Activity</h3>
+                <ul>
+                    <li>John liked a post</li>
+                    <li>Lisa started a group</li>
+                    <li>Mike joined an event</li>
+                </ul>
+            </div>
+            <div class="ads">
+                <h3>Advertisement</h3>
+                <p>Your ad here</p>
+            </div>
+        </aside>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mymedia - Profile</title>
+    <link rel="stylesheet" href="profile.css" />
+</head>
+<body>
+
+    <div class="profile-header">
+        <div class="cover-photo"></div>
+        <div class="profile-pic-section">
+            <img src="https://via.placeholder.com/100" alt="Profile" class="profile-pic">
+            <h2 class="user-name">Ridwan Ahmed</h2>
+            <p class="bio">Dreamer | Developer | Designer</p>
+        </div>
+    </div>
+
+    <div class="profile-content">
+        <div class="left-info">
+            <h3>Intro</h3>
+            <p>Lives in Chakaria, Cox's Bazar</p>
+            <p>From Bangladesh</p>
+            <p>Joined Mymedia in 2025</p>
+        </div>
+
+        <div class="right-posts">
+            <div class="post-box">
+                <textarea placeholder="Write something..."></textarea>
+                <button id="postBtn">Post</button>
+            </div>
+            <div class="feed" id="feed">
+                <!-- User posts will show here -->
+            </div>
+        </div>
+    </div>
+
+<script src="profile.js"></script>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Mymedia - Friends & Messenger</title>
+  <link rel="stylesheet" href="friends-messenger.css">
+</head>
+<body>
+
+  <div class="container">
+    <div class="friends-section">
+      <h2>Friend Requests</h2>
+      <div class="friend-request">
+        <p><strong>Hasan Uddin</strong> wants to be your friend.</p>
+        <button onclick="acceptRequest(this)">Accept</button>
+        <button onclick="rejectRequest(this)">Reject</button>
+      </div>
+      <div class="friend-request">
+        <p><strong>Sadia Khatun</strong> sent you a request.</p>
+        <button onclick="acceptRequest(this)">Accept</button>
+        <button onclick="rejectRequest(this)">Reject</button>
+      </div>
+    </div>
+
+    <div class="messenger-section">
+      <h2>Messenger</h2>
+      <div class="chat-box">
+        <div class="messages" id="messages">
+          <p><strong>Ridwan:</strong> Hello!</p>
+        </div>
+        <input type="text" id="chatInput" placeholder="Type a message...">
+        <button onclick="sendMessage()">Send</button>
+      </div>
+    </div>
+  </div>
+
+<script src="friends-messenger.js"></script>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Mymedia - Notifications</title>
+  <link rel="stylesheet" href="notification.css">
+</head>
+<body>
+
+  <div class="navbar">
+    <div class="logo">Mymedia</div>
+    <div class="notification-icon" onclick="toggleDropdown()">
+      🔔
+      <span class="badge" id="notificationCount">3</span>
+    </div>
+  </div>
+
+  <div class="dropdown" id="notificationDropdown">
+    <ul id="notificationList">
+      <li><strong>Shamim</strong> liked your post.</li>
+      <li><strong>Sadia</strong> sent you a friend request.</li>
+      <li><strong>Hasan</strong> commented: “Nice pic!”</li>
+    </ul>
+  </div>
+
+  <script src="notification.js"></script>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Mymedia - Profile</title>
+  <link rel="stylesheet" href="profile.css">
+</head>
+<body>
+
+  <div class="navbar">
+    <div class="logo">Mymedia</div>
+    <div class="nav-links">
+      <a href="#">Home</a>
+      <a href="#">Friends</a>
+      <a href="#">Messages</a>
+      <a href="#">Notifications</a>
+    </div>
+  </div>
+
+  <div class="profile-container">
+    <div class="cover-photo"></div>
+    <div class="profile-info">
+      <img src="https://i.ibb.co/ZVh01dm/avatar.png" alt="User Photo" class="profile-pic">
+      <h2>Ridwan Ahmed</h2>
+      <p>Electrical & Plumbing Technician | Dreamer</p>
+      <button>Edit Profile</button>
+    </div>
+
+    <div class="profile-posts">
+      <div class="post">
+        <p><strong>Ridwan:</strong> Just completed my Level 2 Electrical Course!</p>
+      </div>
+      <div class="post">
+        <p><strong>Ridwan:</strong> Working on my Mymedia app!</p>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
+...
+<script src="profile.js"></script>
+</body>
+</html>
+<!-- Edit Profile Form (hidden by default) -->
+<div class="edit-form" id="editForm">
+  <h3>Edit Profile</h3>
+  <input type="text" id="nameInput" placeholder="Enter new name">
+  <input type="text" id="bioInput" placeholder="Enter new bio">
+  <button onclick="saveProfile()">Save</button>
+  <button onclick="closeForm()">Cancel</button>
+</div>
+<script src="profile.js"></script>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Mymedia - News Feed</title>
+  <link rel="stylesheet" href="feed.css">
+</head>
+<body>
+  <div class="feed-container">
+    <div class="post">
+      <h3>Reduan</h3>
+      <p>আজ আমি আমার Mymedia অ্যাপের কাজ শুরু করলাম!</p>
+      <div class="post-actions">
+        <button onclick="likePost(this)">Like (<span>0</span>)</button>
+        <button onclick="toggleComment(this)">Comment</button>
+      </div>
+      <div class="comment-box" style="display:none;">
+        <input type="text" placeholder="Write a comment..." onkeydown="submitComment(event, this)">
+        <div class="comments"></div>
+      </div>
+    </div>
+  </div>
+
+  <script src="feed.js"></script>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Mymedia - Friends</title>
+  <link rel="stylesheet" href="friends.css">
+</head>
+<body>
+  <div class="friends-container">
+    <h2>People You May Know</h2>
+
+    <div class="user-card">
+      <p><strong>Rahim Uddin</strong></p>
+      <button onclick="sendRequest(this)">Add Friend</button>
+    </div>
+
+    <div class="user-card">
+      <p><strong>Sumaiya Akter</strong></p>
+      <button onclick="sendRequest(this)">Add Friend</button>
+    </div>
+  </div>
+
+  <h3>Friend Requests</h3>
+  <div id="requests"></div>
+
+  <script src="friends.js"></script>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Mymedia - Messenger</title>
+  <link rel="stylesheet" href="messenger.css">
+</head>
+<body>
+  <div class="messenger-container">
+    <div class="chat-header">Chat with Sumaiya</div>
+    <div class="chat-box" id="chatBox">
+      <!-- Messages will appear here -->
+    </div>
+    <div class="chat-input">
+      <input type="text" id="messageInput" placeholder="Type a message..." onkeydown="sendMessage(event)">
+      <button onclick="sendMessage()">Send</button>
+    </div>
+  </div>
+
+  <script src="messenger.js"></script>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Mymedia - Notifications</title>
+  <link rel="stylesheet" href="notification.css">
+</head>
+<body>
+  <div class="header">
+    <h2>Mymedia</h2>
+    <div class="notification-icon" onclick="toggleNotifications()">
+      &#128276;
+      <span class="badge" id="badge">3</span>
+    </div>
+  </div>
+
+  <div class="notification-dropdown" id="dropdown">
+    <p>You have a new friend request</p>
+    <p>Sumaiya liked your photo</p>
+    <p>Rahim commented on your post</p>
+  </div>
+
+  <script src="notification.js"></script>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Mymedia - Settings</title>
+  <link rel="stylesheet" href="settings.css">
+</head>
+<body>
+  <div class="settings-container">
+    <h2>Account Settings</h2>
+
+    <div class="setting-section">
+      <label for="username">Change Username</label>
+      <input type="text" id="username" placeholder="New username">
+    </div>
+
+    <div class="setting-section">
+      <label for="email">Change Email</label>
+      <input type="email" id="email" placeholder="New email">
+    </div>
+
+    <div class="setting-section">
+      <label for="password">Change Password</label>
+      <input type="password" id="password" placeholder="New password">
+    </div>
+
+    <div class="setting-section">
+      <label for="language">Language</label>
+      <select id="language
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Create Group or Page - Mymedia</title>
+  <link rel="stylesheet" href="group-create.css">
+</head>
+<body>
+  <div class="create-container">
+    <h2>Create a Group or Page</h2>
+
+    <div class="form-group">
+      <label for="type">Type:</label>
+      <select id="type">
+        <option value="group">Group</option>
+        <option value="page">Page</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="name">Name:</label>
+      <input type="text" id="name" placeholder="Enter group or page name">
+    </div>
+
+    <div class="form-group">
+      <label for="description">Description:</label>
+      <textarea id="description" placeholder="Write something about it..."></textarea>
+    </div>
+
+    <button onclick="create()">Create</button>
+
+    <p id="message" class="success"></p>
+  </div>
+
+  <script src="group-create.js"></script>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Mymedia Marketplace - Sell Product</title>
+  <link rel="stylesheet" href="marketplace.css">
+</head>
+<body>
+  <div class="marketplace-container">
+    <h2>Sell a Product</h2>
+
+    <div class="form-group">
+      <label for="productName">Product Name</label>
+      <input type="text" id="productName" placeholder="Enter product name">
+    </div>
+
+    <div class="form-group">
+      <label for="price">Price (৳)</label>
+      <input type="number" id="price" placeholder="Enter price">
+    </div>
+
+    <div class="form-group">
+      <label for="description">Description</label>
+      <textarea id="description" placeholder="Write about the product"></textarea>
+    </div>
+
+    <div class="form-group">
+      <label for="image">Upload Image</label>
+      <input type="file" id="image">
+    </div>
+
+    <button onclick="postProduct()">Post Product</button>
+
+    <p id="successMessage" class="success"></p>
+  </div>
+
+  <script src="marketplace.js"></script>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Mymedia Messenger</title>
+  <link rel="stylesheet" href="messenger.css">
+</head>
+<body>
+  <div class="messenger-container">
+    <div class="sidebar">
+      <h3>Messages</h3>
+      <ul>
+        <li class="active">Riyad</li>
+        <li>Hasan</li>
+        <li>Tanvir</li>
+      </ul>
+    </div>
+
+    <div class="chat-area">
+      <div class="chat-header">
+        <h4>Riyad</h4>
+      </div>
+
+      <div class="chat-box" id="chatBox">
+        <div class="message friend">Hi Ridwan!</div>
+        <div class="message me">Hello bro, what's up?</div>
+      </div>
+
+      <div class="chat-input">
+        <input type="text" id="chatInput" placeholder="Type a message...">
+        <button onclick="sendMessage()">Send</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="messenger.js"></script>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Friend Profile - Mymedia</title>
+  <link rel="stylesheet" href="friend-profile.css">
+</head>
+<body>
+  <div class="profile-container">
+    <div class="cover-photo">
+      <img src="cover.jpg" alt="Cover Photo">
+    </div>
+
+    <div class="profile-photo">
+      <img src="profile.jpg" alt="Profile Photo">
+      <h2>Riyad Hossain</h2>
+      <p>Electrician | Cox's Bazar</p>
+    </div>
+
+    <div class="friend-details">
+      <h3>About</h3>
+      <p>Lives in Chakaria, Cox's Bazar</p>
+      <p>Works at AIT Electric</p>
+      <p>Studied at AIT Institute</p>
+    </div>
+
+    <div class="friend-posts">
+      <h3>Recent Posts</h3>
+      <div class="post">
+        <p>Just completed a new wiring project!</p>
+        <img src="work.jpg" alt="Post Image">
+      </div>
+    </div>
+  </div>
+</body>
+</html>
+<!-- post-section.html -->
+<div class="post-box">
+  <textarea id="postText" placeholder="What's on your mind, Ridwan?"></textarea>
+  <button onclick="addPost()">Post</button>
+</div>
+
+<div id="postContainer">
+  <!-- নতুন পোস্টগুলো এখানে আসবে -->
+</div><!-- Head এর মধ্যে CSS -->
+<link rel="stylesheet" href="post-style.css">
+
+<!-- Body এর নিচে JS -->
+<script src="post-script.js"></script>
+<!-- friend-requests.html -->
+<div class="friend-requests">
+  <h2>Friend Requests</h2>
+
+  <div class="request">
+    <img src="user1.jpg" alt="User 1">
+    <div class="request-info">
+      <p><strong>Arif Hossain</strong> sent you a friend request.</p>
+      <button onclick="acceptRequest(this)">Confirm</button>
+      <button onclick="deleteRequest(this)">Delete</button>
+    </div>
+  </div>
+
+  <div class="request">
+    <img src="user2.jpg" alt="User 2">
+    <div class="request-info">
+      <p><strong>Sumi Akter</strong> sent you a friend request.</p>
+      <button onclick="acceptRequest(this)">Confirm</button>
+      <button onclick="deleteRequest(this)">Delete</button>
+    </div>
+  </div>
+</div>
+<!-- Head এর মধ্যে CSS -->
+<link rel="stylesheet" href="friend-style.css">
+
+<!-- Body এর নিচে JS -->
+<script src="friend-script.js"></script>
+<!-- messenger.html -->
+<div class="messenger">
+  <div class="chat-list">
+    <h3>Chats</h3>
+    <ul>
+      <li onclick="openChat('arif')">Arif Hossain</li>
+      <li onclick="openChat('sumi')">Sumi Akter</li>
+    </ul>
+  </div>
+
+  <div class="chat-box">
+    <div id="chatHeader">Select a chat</div>
+    <div id="chatMessages" class="messages"></div>
+
+    <div class="chat-input">
+      <input type="text" id="messageInput" placeholder="Type a message...">
+      <button onclick="sendMessage()">Send</button>
+/* Reset & base */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background-color: #f0f2f5;
+  color: #1c1e21;
+}
+
+/* Header */
+header {
+  background-color: #1877f2;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 30px;
+}
+
+.logo {
+  font-size: 32px;
+  font-weight: 700;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+.login-form input {
+  padding: 7px 12px;
+  margin-left: 8px;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  outline: none;
+}
+
+.login-form button {
+  margin-left: 8px;
+  padding: 7px 16px;
+  background-color: #42b72a;
+  border: none;
+  border-radius: 6px;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.login-form button:hover {
+  background-color: #36a420;
+}
+
+/* Main layout */
+main {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 40px 30px;
+  gap: 40px;
+}
+
+/* Left side */
+.left-section {
+  flex: 1;
+  max-width: 450px;
+  color: #1c1e21;
+}
+
+.left-section h1 {
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 1.1;
+  margin-bottom: 30px;
+}
+
+.left-section img {
+  max-width: 100%;
+}
+
+/* Right side signup */
+.right-section {
+  flex: 1;
+  max-width: 420px;
+  background-color: white;
+  padding: 25px 30px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgb(0 0 0 / 0.15);
+}
+
+.signup-box h2 {
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.signup-box p {
+  font-size: 16px;
+  margin-bottom: 20px;
+  color: #606770;
+}
+
+form input[type="text"],
+form input[type="email"],
+form input[type="password"],
+form select {
+  width: 100%;
+  padding: 14px 15px;
+  margin-bottom: 15px;
+  font-size: 16px;
+  border: 1px solid #dddfe2;
+  border-radius: 6px;
+  outline: none;
+  transition: border-color 0.3s;
+}
+
+form input[type="text"]:focus,
+form input[type="email"]:focus,
+form input[type="password"]:focus,
+form select:focus {
+  border-color: #1877f2;
+}
+
+.name-row {
+  display: flex;
+  gap: 10px;
+}
+
+.name-row input {
+  flex: 1;
+}
+
+label {
+  font-weight: 600;
+  font-size: 14px;
+  margin-bottom: 6px;
+  display: block;
+  color: #1c1e21;
+}
+
+.dob {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 15px;
+}
+
+.dob select {
+  flex: 1;
+}
+
+.gender {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.gender input[type="radio"] {
+  margin-right: 5px;
+  cursor: pointer;
+}
+
+.gender label {
+  cursor: pointer;
+  font-size: 14px;
+  user-select: none;
+}
+
+button[type="submit"] {
+  width: 100%;
+  background-color: #42b72a;
+  border: none;
+  padding: 14px 0;
+  color: white;
+  font-size: 18px;
+  font-weight: 700;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button[type="submit"]:hover {
+  background-color: #36a420;
+}
+
+.terms {
+  font-size: 12px;
+  color: #606770;
+  margin-top: 20px;
+  line-height: 1.3;
+}
+
+.terms a {
+  color: #1877f2;
+  text-decoration: none;
+}
+
+.terms a:hover {
+  text-decoration: underline;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  margin: 40px 0 20px;
+  font-size: 14px;
+  color: #606770;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+    background-color: #f0f2f5;
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #1877f2;
+    padding: 10px 20px;
+    color: white;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.search-box input {
+    padding: 6px 10px;
+    border: none;
+    border-radius: 20px;
+    width: 200px;
+}
+
+.nav-icons {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.icon-btn {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.profile-dropdown {
+    position: relative;
+}
+
+.profile-pic {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    right: 0;
+    top: 40px;
+    background: white;
+    color: black;
+    padding: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    min-width: 120px;
+}
+
+.profile-dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown-content a {
+    display: block;
+    padding: 6px 0;
+    text-decoration: none;
+    color: #333;
+}
+
+.container {
+    display: flex;
+    padding: 20px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.sidebar {
+    width: 20%;
+    padding: 10px;
+}
+
+.left-sidebar ul,
+.right-sidebar ul {
+    list-style: none;
+}
+
+.left-sidebar ul li,
+.right-sidebar ul li {
+    margin: 10px 0;
+}
+
+.left-sidebar ul li a,
+.right-sidebar ul li a {
+    text-decoration: none;
+    color: #333;
+}
+
+.main-content {
+    width: 60%;
+    padding: 0 20px;
+}
+
+.post-box {
+    background: white;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.post-box textarea {
+    width: 100%;
+    height: 80px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    padding: 10px;
+    resize: none;
+}
+
+.post-box button {
+    margin-top: 10px;
+    background-color: #1877f2;
+    color: white;
+    border: none;
+    padding: 8px 14px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.feed {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.feed .post {
+    background: white;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+}
+
+.right-sidebar {
+    width: 20%;
+    padding: 10px;
+}
+
+.right-sidebar h3 {
+    margin-bottom: 10px;
+}
+
+.right-sidebar .ads {
+    margin-top: 20px;
+}
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f0f2f5;
+}
+
+.profile-header {
+    position: relative;
+    background-color: #fff;
+    text-align: center;
+}
+
+.cover-photo {
+    width: 100%;
+    height: 200px;
+    background-color: #1877f2;
+}
+
+.profile-pic-section {
+    margin-top: -50px;
+    padding-bottom: 10px;
+}
+
+.profile-pic {
+    border: 4px solid #fff;
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+}
+
+.user-name {
+    margin: 10px 0 5px 0;
+}
+
+.bio {
+    color: #555;
+}
+
+.profile-content {
+    display: flex;
+    padding: 20px;
+    max-width: 1000px;
+    margin: auto;
+    gap: 20px;
+}
+
+.left-info {
+    width: 30%;
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 0 5px rgba(0,0,0,0.1);
+}
+
+.right-posts {
+    width: 70%;
+}
+
+.post-box {
+    background: white;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.post-box textarea {
+    width: 100%;
+    height: 80px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    padding: 10px;
+    resize: none;
+}
+
+.post-box button {
+    margin-top: 10px;
+    background-color: #1877f2;
+    color: white;
+    border: none;
+    padding: 8px 14px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.feed .post {
+    background: white;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+    margin-bottom: 10px;
+}
+body {
+  font-family: Arial, sans-serif;
+  background: #f0f2f5;
+  margin: 0;
+  padding: 20px;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.friends-section, .messenger-section {
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  width: 48%;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.friend-request {
+  border-bottom: 1px solid #eee;
+  padding: 10px 0;
+}
+
+.friend-request button {
+  margin: 5px 5px 5px 0;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.friend-request button:first-child {
+  background-color: #1877f2;
+  color: white;
+}
+
+.friend-request button:last-child {
+  background-color: #ccc;
+}
+
+.chat-box {
+  display: flex;
+  flex-direction: column;
+}
+
+.messages {
+  background: #e9ebee;
+  padding: 10px;
+  height: 200px;
+  overflow-y: scroll;
+  border-radius: 6px;
+  margin-bottom: 10px;
+}
+
+.chat-box input[type="text"] {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  margin-bottom: 10px;
+}
+
+.chat-box button {
+  background-color: #1877f2;
+  color: white;
+  padding: 8px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f0f2f5;
+}
+
+.navbar {
+  background-color: #1877f2;
+  color: white;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.notification-icon {
+  position: relative;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.badge {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  background: red;
+  color: white;
+  font-size: 12px;
+  padding: 2px 6px;
+  border-radius: 50%;
+}
+
+.dropdown {
+  position: absolute;
+  right: 20px;
+  top: 50px;
+  background: white;
+  width: 250px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  border-radius: 6px;
+  display: none;
+}
+
+.dropdown ul {
+  list-style: none;
+  margin: 0;
+  padding: 10px;
+}
+
+.dropdown ul li {
+  padding: 10px;
+  border-bottom: 1px solid #eee;
+}
+
+.dropdown ul li:last-child {
+  border-bottom: none;
+}
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f0f2f5;
+}
+
+.navbar {
+  background-color: #1877f2;
+  color: white;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar .logo {
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.navbar .nav-links a {
+  color: white;
+  margin-left: 15px;
+  text-decoration: none;
+}
+
+.profile-container {
+  max-width: 800px;
+  margin: auto;
+  background: white;
+  border-radius: 6px;
+  overflow: hidden;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.cover-photo {
+  background: url('https://i.ibb.co/wSKz8sH/cover.jpg') no-repeat center center;
+  background-size: cover;
+  height: 200px;
+}
+
+.profile-info {
+  text-align: center;
+  padding: 20px;
+}
+
+.profile-pic {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  margin-top: -60px;
+  border: 4px solid white;
+}
+
+.profile-info h2 {
+  margin: 10px 0 5px;
+}
+
+.profile-info p {
+  color: #555;
+}
+
+.profile-info button {
+  margin-top: 10px;
+  padding: 8px 16px;
+  background: #1877f2;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.profile-posts {
+  padding: 20px;
+}
+
+.post {
+  background: #f9f9f9;
+  margin-bottom: 10px;
+  padding: 15px;
+  border-radius: 6px;
+}
+edit-form {
+  position: fixed;
+  top: 20%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: white;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  border-radius: 8px;
+  display: none;
+  z-index: 1000;
+}
+
+.edit-form input {
+  display: block;
+  width: 100%;
+  margin-bottom: 10px;
+  padding: 8px;
+}
+
+.edit-form button {
+  margin-right: 10px;
+  padding: 8px 14px;
+}
+body {
+  font-family: Arial, sans-serif;
+  background: #f0f2f5;
+  margin: 0;
+  padding: 20px;
+}
+
+.feed-container {
+  max-width: 600px;
+  margin: auto;
+}
+
+.post {
+  background: white;
+  padding: 15px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 4px rgba(0,0,0,0.1);
+}
+
+.post-actions {
+  margin-top: 10px;
+}
+
+.post-actions button {
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.comment-box {
+  margin-top: 10px;
+}
+
+.comment-box input {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 5px;
+}
+
+.comments p {
+  background: #f1f1f1;
+  padding: 6px;
+  border-radius: 5px;
+  margin: 3px 0;
+}
+body {
+  font-family: Arial, sans-serif;
+  background: #eef0f3;
+  padding: 20px;
+}
+
+.friends-container {
+  background: white;
+  padding: 15px;
+  border-radius: 8px;
+  max-width: 500px;
+  margin: auto;
+}
+
+.user-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #f9f9f9;
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 6px;
+}
+
+button {
+  padding: 6px 10px;
+  cursor: pointer;
+}
+
+#requests {
+  max-width: 500px;
+  margin: 20px auto;
+}
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  background: #e5e5e5;
+}
+
+.messenger-container {
+  max-width: 400px;
+  margin: 30px auto;
+  background: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 0 8px rgba(0,0,0,0.1);
+}
+
+.chat-header {
+  background: #1877f2;
+  color: white;
+  padding: 12px;
+  font-size: 18px;
+}
+
+.chat-box {
+  height: 300px;
+  overflow-y: auto;
+  padding: 10px;
+  background: #f0f2f5;
+}
+
+.chat-box .message {
+  margin: 8px 0;
+  padding: 10px;
+  background: white;
+  border-radius: 10px;
+  max-width: 80%;
+}
+
+.chat-box .me {
+  align-self: flex-end;
+  background: #dcf8c6;
+  text-align: right;
+  margin-left: auto;
+}
+
+.chat-input {
+  display: flex;
+  padding: 10px;
+  border-top: 1px solid #ccc;
+  background: #fff;
+}
+
+.chat-input input {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  outline: none;
+}
+
+.chat-input button {
+  padding: 10px 15px;
+  margin-left: 10px;
+  border: none;
+  background: #1877f2;
+  color: white;
+  border-radius: 20px;
+  cursor: pointer;
+}
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial;
+  background: #f2f2f2;
+}
+
+.header {
+  background: #1877f2;
+  padding: 10px 20px;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.notification-icon {
+  position: relative;
+  cursor: pointer;
+  font-size: 24px;
+}
+
+.badge {
+  background: red;
+  color: white;
+  font-size: 12px;
+  padding: 2px 6px;
+  border-radius: 50%;
+  position: absolute;
+  top: -8px;
+  right: -8px;
+}
+
+.notification-dropdown {
+  display: none;
+  position: absolute;
+  top: 60px;
+  right: 20px;
+  background: white;
+  border: 1px solid #ddd;
+  width: 250px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  border-radius: 8px;
+  z-index: 1000;
+}
+
+.notification-dropdown p {
+  margin: 0;
+  padding: 10px;
+  border-bottom: 1px solid #eee;
+}
+
+.notification-dropdown p:last-child {
+  border-bottom: none;
+}
+body {
+  font-family: sans-serif;
+  background: #f0f2f5;
+  padding: 30px;
+}
+
+.settings-container {
+  background: white;
+  padding: 20px;
+  max-width: 400px;
+  margin: auto;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+h2 {
+  text-align: center;
+  color: #1877f2;
+}
+
+.setting-section {
+  margin-bottom: 15px;
+}
+
+.setting-section label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.setting-section input, .setting-section select {
+  width: 100%;
+  padding: 8px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+button {
+  background: #1877f2;
+  color: white;
+  padding: 10px;
+  border: none;
+  width: 100%;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.success-msg {
+  text-align: center;
+  color: green;
+  margin-top: 15px;
+}
+body {
+  font-family: Arial;
+  background: #f2f2f2;
+  padding: 30px;
+}
+
+.create-container {
+  max-width: 400px;
+  margin: auto;
+  background: white;
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0 0 8px rgba(0,0,0,0.1);
+}
+
+h2 {
+  text-align: center;
+  color: #1877f2;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: bold;
+}
+
+input, textarea, select {
+  width: 100%;
+  padding: 8px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+textarea {
+  height: 80px;
+  resize: none;
+}
+
+button {
+  width: 100%;
+  background: #1877f2;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.success {
+  color: green;
+  text-align: center;
+  margin-top: 10px;
+}
+body {
+  font-family: sans-serif;
+  background: #f5f6f8;
+  padding: 30px;
+}
+
+.marketplace-container {
+  max-width: 400px;
+  margin: auto;
+  background: white;
+  padding: 25px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+h2 {
+  text-align: center;
+  color: #1877f2;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 6px;
+}
+
+input, textarea {
+  width: 100%;
+  padding: 8px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+textarea {
+  height: 70px;
+  resize: none;
+}
+
+button {
+  background: #1877f2;
+  color: white;
+  padding: 10px;
+  border: none;
+  width: 100%;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.success {
+  color: green;
+  text-align: center;
+  margin-top: 10px;
+}
+body {
+  margin: 0;
+  font-family: Arial;
+}
+
+.messenger-container {
+  display: flex;
+  height: 100vh;
+}
+
+.sidebar {
+  width: 25%;
+  background: #f0f2f5;
+  padding: 20px;
+  box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+}
+
+.sidebar h3 {
+  margin-top: 0;
+  color: #1877f2;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar li {
+  padding: 10px;
+  cursor: pointer;
+}
+
+.sidebar .active {
+  background: #dbeafe;
+  border-radius: 5px;
+}
+
+.chat-area {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.chat-header {
+  background: #1877f2;
+  color: white;
+  padding: 15px;
+}
+
+.chat-box {
+  flex: 1;
+  padding: 15px;
+  background: #e9ebee;
+  overflow-y: auto;
+}
+
+.message {
+  max-width: 70%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 8px;
+}
+
+.friend {
+  background: white;
+  align-self: flex-start;
+}
+
+.me {
+  background: #d1e7dd;
+  align-self: flex-end;
+  text-align: right;
+}
+
+.chat-input {
+  display: flex;
+  padding: 10px;
+  background: white;
+  border-top: 1px solid #ccc;
+}
+
+.chat-input input {
+  flex: 1;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.chat-input button {
+  margin-left: 10px;
+  background: #1877f2;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+body {
+  margin: 0;
+  font-family: Arial;
+  background: #f0f2f5;
+}
+
+.profile-container {
+  max-width: 800px;
+  margin: auto;
+  background: white;
+  box-shadow: 0 0 5px rgba(0,0,0,0.1);
+}
+
+.cover-photo img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.profile-photo {
+  text-align: center;
+  margin-top: -60px;
+}
+
+.profile-photo img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  border: 5px solid white;
+}
+
+.profile-photo h2 {
+  margin: 10px 0 5px 0;
+}
+
+.friend-details {
+  padding: 20px;
+  border-top: 1px solid #ddd;
+}
+
+.friend-posts {
+  padding: 20px;
+  border-top: 1px solid #ddd;
+}
+
+.post {
+  background: #f5f5f5;
+  padding: 10px;
+  border-radius: 8px;
+}
+
+.post img {
+  max-width: 100%;
+  margin-top: 10px;
+  border-radius: 5px;
+}
+/* post-style.css */
+.post-box {
+  background: white;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 0 5px rgba(0,0,0,0.1);
+  margin-bottom: 20px;
+}
+
+.post-box textarea {
+  width: 100%;
+  height: 60px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  padding: 10px;
+  resize: none;
+  font-size: 16px;
+}
+
+.post-box button {
+  margin-top: 10px;
+  padding: 8px 16px;
+  background-color: #1877f2;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+#postContainer .post {
+  background: #fff;
+  padding: 15px;
+  margin-bottom: 15px;
+  border-radius: 8px;
+  box-shadow: 0 0 3px rgba(0,0,0,0.1);
+}
+/* friend-style.css */
+.friend-requests {
+  background: white;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 0 5px rgba(0,0,0,0.1);
+  margin-top: 20px;
+}
+
+.request {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 10px;
+}
+
+.request img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-right: 15px;
+}
+
+.request-info button {
+  margin-right: 10px;
+  padding: 5px 12px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.request-info button:first-child {
+  background-color: #1877f2;
+  color: white;
+}
+
+.request-info button:last-child {
+  background-color: #ccc;
+  color: black;
+}
+/* messenger-style.css */
+.messenger {
+  display: flex;
+  height: 500px;
+  background-color: white;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 0 5px rgba(0,0,0,0.1);
+}
+
+.chat-list {
+  width: 30%;
+  background-color: #f0f2f5;
+  padding: 15px;
+  border-right: 1px solid #ccc;
+}
+
+.chat-list ul {
+  list-style: none;
+  padding: 0;
+}
+
+.chat-list li {
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 6px;
+}
+
+.chat-list li:hover {
+  background-color: #e4e6eb;
+}
+
+.chat-box {
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 15px;
+}
+
+#chatHeader {
+  fon
+document.getElementById('signupForm').addEventListener('submit', function(event) {
+  event.preventDefault();
+
+  const firstName = document.getElementById('firstname').value.trim();
+  const lastName = document.getElementById('lastname').value.trim();
+  const email = document.getElementById('email').value.trim();
+  const password = document.getElementById('password').value;
+  const day = document.getElementById('day').value;
+  const month = document.getElementById('month').value;
+  const year = document.getElementById('year').value;
+  const genderElems = document.getElementsByName('gender');
+
+  let gender = null;
+  for (let i = 0; i < genderElems.length; i++) {
+    if (genderElems[i].checked) {
+      gender = genderElems[i].value;
+      break;
+    }
+  }
+
+  // Basic validation
+  if (!firstName || !lastName || !email || !password || !day || !month || !year || !gender) {
+    alert('Please fill all the fields correctly.');
+    return;
+  }
+
+  if (password.length < 6) {
+    alert('Password must be at least 6 characters.');
+    return;
+  }
+
+  // Email format validation (simple)
+  const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  if (!emailPattern.test(email)) {
+    alert('Please enter a valid email.');
+    return;
+  }
+
+  alert(`Welcome to Mymedia, ${firstName}!\nYour account has been created.`);
+
+  // Reset form
+  this.reset();
+});
+// পোস্ট বক্স থেকে লেখা নিয়ে নতুন পোস্ট বানানো
+document.getElementById('postBtn').addEventListener('click', function () {
+    const textarea = document.querySelector('.post-box textarea');
+    const postText = textarea.value.trim();
+
+    if (postText !== '') {
+        const postElement = document.createElement('div');
+        postElement.className = 'post';
+        postElement.innerHTML = `
+            <p>${postText}</p>
+            <div class="post-actions">
+                <button onclick="likePost(this)">Like</button>
+                <button onclick="commentPost(this)">Comment</button>
+                <button onclick="sharePost(this)">Share</button>
+            </div>
+        `;
+        document.getElementById('feed').prepend(postElement);
+        textarea.value = ''; // পোস্ট দেওয়ার পর ইনপুট ফাঁকা
+    } else {
+        alert("Please write something before posting.");
+    }
+});
+
+// রিয়্যাকশন বাটন ফাংশন
+function likePost(btn) {
+    btn.textContent = 'Liked';
+}
+
+function commentPost(btn) {
+    const comment = prompt("Write a comment:");
+    if (comment) {
+        alert("You commented: " + comment);
+    }
+}
+
+function sharePost(btn) {
+    alert("Post shared!");
+}
+document.getElementById('postBtn').addEventListener('click', function () {
+    const textarea = document.querySelector('.post-box textarea');
+    const postText = textarea.value.trim();
+
+    if (postText !== '') {
+        const postElement = document.createElement('div');
+        postElement.className = 'post';
+        postElement.innerHTML = `
+            <p>${postText}</p>
+            <div class="post-actions">
+                <button onclick="likePost(this)">Like</button>
+                <button onclick="commentPost(this)">Comment</button>
+                <button onclick="sharePost(this)">Share</button>
+            </div>
+        `;
+        document.getElementById('feed').prepend(postElement);
+        textarea.value = '';
+    } else {
+        alert("Please write something before posting.");
+    }
+});
+
+function likePost(btn) {
+    btn.textContent = 'Liked';
+}
+
+function commentPost(btn) {
+    const comment = prompt("Write a comment:");
+    if (comment) {
+        alert("You commented: " + comment);
+    }
+}
+
+function sharePost(btn) {
+    alert("Post shared!");
+}
+// Friend Request Functions
+function acceptRequest(button) {
+  button.parentElement.innerHTML = "<p>Friend request accepted!</p>";
+}
+
+function rejectRequest(button) {
+  button.parentElement.innerHTML = "<p>Friend request rejected.</p>";
+}
+
+// Messenger Functions
+function sendMessage() {
+  const input = document.getElementById('chatInput');
+  const text = input.value.trim();
+  if (text !== '') {
+    const messages = document.getElementById('messages');
+    const newMsg = document.createElement('p');
+    newMsg.innerHTML = `<strong>You:</strong> ${text}`;
+    messages.appendChild(newMsg);
+    input.value = '';
+    messages.scrollTop = messages.scrollHeight;
+  }
+}
+function toggleDropdown() {
+  const dropdown = document.getElementById('notificationDropdown');
+  const count = document.getElementById('notificationCount');
+
+  if (dropdown.style.display === 'block') {
+    dropdown.style.display = 'none';
+  } else {
+    dropdown.style.display = 'block';
+    count.style.display = 'none'; // Hide badge when opened
+  }
+}
+document.addEventListener('DOMContentLoaded', function () {
+  const editBtn = document.querySelector('button');
+
+  editBtn.addEventListener('click', function () {
+    alert("Edit Profile ফিচার এখনও তৈরি হয়নি! শীঘ্রই আসছে...");
+  });
+});
+document.addEventListener('DOMContentLoaded', function () {
+  const editBtn = document.querySelector('button');
+  const editForm = document.getElementById('editForm');
+
+  editBtn.addEventListener('click', function () {
+    editForm.style.display = 'block';
+  });
+});
+
+function saveProfile() {
+  const newName = document.getElementById('nameInput').value;
+  const newBio = document.getElementById('bioInput').value;
+
+  if (newName) {
+    document.querySelector('.profile-info h2').textContent = newName;
+  }
+  if (newBio) {
+    document.querySelector('.profile-info p').textContent = newBio;
+  }
+
+  closeForm();
+}
+
+function closeForm() {
+  document.getElementById('editForm').style.display = 'none';
+}
+function likePost(btn) {
+  let countSpan = btn.querySelector('span');
+  let count = parseInt(countSpan.textContent);
+  countSpan.textContent = count + 1;
+}
+
+function toggleComment(btn) {
+  let commentBox = btn.parentElement.nextElementSibling;
+  commentBox.style.display = (commentBox.style.display === "none") ? "block" : "none";
+}
+
+function submitComment(event, input) {
+  if (event.key === "Enter" && input.value.trim() !== "") {
+    const commentText = input.value;
+    const commentContainer = input.nextElementSibling;
+
+    const p = document.createElement("p");
+    p.textContent = commentText;
+    commentContainer.appendChild(p);
+
+    input.value = "";
+  }
+}
+function sendRequest(btn) {
+  const name = btn.parentElement.querySelector('strong').textContent;
+  btn.disabled = true;
+  btn.textContent = "Request Sent";
+
+  const requests = document.getElementById('requests');
+  const div = document.createElement('div');
+  div.className = "user-card";
+  div.innerHTML = `
+    <p><strong>${name}</strong></p>
+    <div>
+      <button onclick="acceptRequest(this)">Confirm</button>
+      <button onclick="removeRequest(this)">Delete</button>
+    </div>
+  `;
+  requests.appendChild(div);
+}
+
+function acceptRequest(btn) {
+  const card = btn.closest('.user-card');
+  card.innerHTML = `<p><strong>${card.querySelector('strong').textContent}</strong> is now your friend</p>`;
+}
+
+function removeRequest(btn) {
+  const card = btn.closest('.user-card');
+  card.remove();
+}
+function sendMessage(event) {
+  if (event && event.key !== "Enter") return;
+
+  const input = document.getElementById('messageInput');
+  const message = input.value.trim();
+  if (message === "") return;
+
+  const chatBox = document.getElementById('chatBox');
+
+  const msgDiv = document.createElement("div");
+  msgDiv.className = "message me";
+  msgDiv.textContent = message;
+  chatBox.appendChild(msgDiv);
+
+  input.value = "";
+  chatBox.scrollTop = chatBox.scrollHeight;
+
+  // Auto-reply
+  setTimeout(() => {
+    const reply = document.createElement("div");
+    reply.className = "message";
+    reply.textContent = "Thanks for your message!";
+    chatBox.appendChild(reply);
+    chatBox.scrollTop = chatBox.scrollHeight;
+  }, 1000);
+}
+function toggleNotifications() {
+  const dropdown = document.getElementById('dropdown');
+  dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';
+
+  // Badge hide after clicking
+  const badge = document.getElementById('badge');
+  badge.style.display = 'none';
+}
+function saveSettings() {
+  const username = document.getElementById("username").value.trim();
+  const email = document.getElementById("email").value.trim();
+  const password = document.getElementById("password").value.trim();
+  const language = document.getElementById("language").value;
+
+  if (!username && !email && !password) {
+    alert("Please fill at least one field to update.");
+    return;
+  }
+
+  document.getElementById("message").innerText = "Settings saved successfully!";
+}
+function saveSettings() {
+  const username = document.getElementById("username").value.trim();
+  const email = document.getElementById("email").value.trim();
+  const password = document.getElementById("password").value.trim();
+  const language = document.getElementById("language").value;
+
+  if (!username && !email && !password) {
+    alert("Please fill at least one field to update.");
+    return;
+  }
+
+  document.getElementById("message").innerText = "Settings saved successfully!";
+}
+function create() {
+  const type = document.getElementById('type').value;
+  const name = document.getElementById('name').value.trim();
+  const description = document.getElementById('description').value.trim();
+  const message = document.getElementById('message');
+
+  if (!name || !description) {
+    message.style.color = 'red';
+    message.innerText = "Please fill out all fields.";
+    return;
+  }
+
+  // Success message
+  message.style.color = 'green';
+  message.innerText = `${type.charAt(0).toUpperCase() + type.slice(1)} "${name}" created successfully!`;
+}
+function postProduct() {
+  const name = document.getElementById('productName').value.trim();
+  const price = document.getElementById('price').value.trim();
+  const description = document.getElementById('description').value.trim();
+  const image = document.getElementById('image').files[0];
+
+  const successMessage = document.getElementById('successMessage');
+
+  if (!name || !price || !description || !image) {
+    successMessage.style.color = 'red';
+    successMessage.innerText = "Please fill out all fields and upload an image.";
+    return;
+  }
+
+  successMessage.style.color = 'green';
+  successMessage.innerText = "Product posted successfully!";
+}
+function sendMessage() {
+  const input = document.getElementById('chatInput');
+  const message = input.value.trim();
+  const chatBox = document.getElementById('chatBox');
+
+  if (message === "") return;
+
+  const newMessage = document.createElement('div');
+  newMessage.className = 'message me';
+  newMessage.innerText = message;
+
+  chatBox.appendChild(newMessage);
+  chatBox.scrollTop = chatBox.scrollHeight;
+  input.value = "";
+}
+// post-script.js
+function addPost() {
+  const postText = document.getElementById('postText').value;
+  if (postText.trim() === '') return;
+
+  const postContainer = document.getElementById('postContainer');
+  const newPost = document.createElement('div');
+  newPost.className = 'post';
+  newPost.innerText = postText;
+
+  // নতুন পোস্ট উপরে দেখাতে
+  postContainer.prepend(newPost);
+
+  // টেক্সট ফাকা করা
+  document.getElementById('postText').value = '';
+}
+// friend-script.js
+function acceptRequest(button) {
+  button.parentElement.innerHTML = "<p>Friend request accepted!</p>";
+}
+
+function deleteRequest(button) {
+  button.parentElement.innerHTML = "<p>Friend request deleted.</p>";
+}
+// messenger-script.js
+
+let currentChat = '';
+
+function openChat(user) {
+  currentChat = user;
+  document.getElementById('chatHeader').innerText = `Chat with ${user === 'arif' ? 'Arif Hossain' : 'Sumi Akter'}`;
+  document.getElementById('chatMessages').innerHTML = ''; // Clear old messages
+}
+
+function sendMessage() {
+  const input = document.getElementById('messageInput');
+  const msg = input.value.trim();
+  if (!msg || !currentChat) return;
+
+  const messageDiv = document.createElement('div');
+  messageDiv.textContent = `You: ${msg}`;
+  messageDiv.style.marginBottom = "8px";
+
+  document.getElementById('chatMessages').appendChild(messageDiv);
+  input.value = '';
+}const profileMenu = document.querySelector('.profile-menu');
+const dropdown = document.querySelector('.dropdown-content');
+
+profileMenu.addEventListener('click', () => {
+  dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';
+});
+
+// ক্লিক করলে মেনু বন্ধ হবে যদি অন্য জায়গায় ক্লিক করা হয়
+window.addEventListener('click', (e) => {
+  if (!profileMenu.contains(e.target)) {
+    dropdown.style.display = 'none';
+  }
+});// login.js
+document.getElementById("loginForm").addEventListener("submit", function (e) {
+  e.preventDefault();
+
+  const email = document.getElementById("email").value;
+  const pass = document.getElementById("password").value;
+  const error = document.getElementById("error");
+
+  // Demo Login Info
+  const correctEmail = "user@mymedia.com";
+  const correctPassword = "123456";
+
+  if (email === correctEmail && pass === correctPassword) {
+    window.location.href = "home.html"; // Success
+  } else {
+    error.textContent = "Invalid email or password!";
+  }
+});function addPost() {
+  const content = document.getElementById("postContent").value;
+  if (content.trim() === "") return;
+
+  const postArea = document.getElementById("newsFeed");
+
+  const newPost = document.createElement("div");
+  newPost.className = "post";
+  newPost.textContent = content;
+
+  postArea.prepend(newPost); // Show newest on top
+  document.getElementById("postContent").value = "";
+}
+// Check if user is logged in
+if (!localStorage.getItem('loggedInUser')) {
+  window.location.href = 'login.html';
+}
+
+function logout() {
+  localStorage.removeItem('loggedInUser');
+  window.location.href = 'login.html';
+}
+
+function submitPost() {
+  const postInput = document.getElementById('postInput');
+  const content = postInput.value.trim();
+
+  if (content === "") {
+    alert("Please write something!");
+    return;
+  }
+
+  const post = {
+    user: localStorage.getItem('loggedInUser'),
+    content: content,
+    time: new Date().toLocaleString()
+  };
+
+  let posts = JSON.parse(localStorage.getItem('posts')) || [];
+  posts.unshift(post);
+  localStorage.setItem('posts', JSON.stringify(posts));
+
+  postInput.value = '';
+  loadPosts();
+}
+
+function loadPosts() {
+  const feed = document.getElementById('feed');
+  feed.innerHTML = '';
+
+function sendMessage() {
+  const input = document.getElementById("chatMessage");
+  const message = input.value.trim();
+  if (message !== "") {
+    const msgList = document.getElementById("messageList");
+    const msgDiv = document.createElement("div");
+    msgDiv.textContent = "You: " + message;
+    msgDiv.style.margin = "5px 0";
+    msgList.appendChild(msgDiv);
+    input.value = "";
+
+    // Optional: auto-scroll
+    msgList.scrollTop = msgList.scrollHeight;
+  }
+}<!DOCTYPE html><html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MyMedia - Social App</title>
+  <style>
+    /* CSS START */
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f0f2f5;
+    }header {
+  background-color: #1877f2;
+  color: white;
+  padding: 1rem;
+  text-align: center;
+}
+
+nav {
+  display: flex;
+  justify-content: space-around;
+  background-color: #fff;
+  box-shadow: 0 1px 5px rgba(0,0,0,0.1);
+  padding: 0.5rem 0;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+}
+
+nav button {
+  background: none;
+  border: none;
+  font-size: 1rem;
+  color: #1877f2;
+  cursor: pointer;
+  padding: 0.5rem;
+}
+
+main {
+  padding: 1rem;
+}
+
+section {
+  display: none;
+}
+
+section.active {
+  display: block;
+}
+
+#login form {
+  background: white;
+  padding: 2rem;
+  max-width: 300px;
+  margin: 3rem auto;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  border-radius: 8px;
+}
+
+#login input {
+  width: 100%;
+  margin-bottom: 1rem;
+  padding: 0.5rem;
+  font-size: 1rem;
+}
+
+#login button {
+  width: 100%;
+  background: #1877f2;
+  color: white;
+  border: none;
+  padding: 0.5rem;
+  font-size: 1rem;
+  border-radius: 5px;
+}
+
+.feed-post {
+  background: white;
+  padding: 1rem;
+  margin: 1rem 0;
+  border-radius: 10px;
+  box-shadow: 0 0 5px rgba(0,0,0,0.05);
+}
+
+.notification {
+  background: #fff;
+  margin: 1rem 0;
+  padding: 1rem;
+  border-left: 5px solid #1877f2;
+  border-radius: 5px;
+}
+
+.friend-request {
+  background: #fff;
+  padding: 1rem;
+  margin: 1rem 0;
+  border-radius: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.friend-request button {
+  background: #1877f2;
+  color: white;
+  border: none;
+  padding: 0.3rem 0.7rem;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-left: 5px;
+}
+
+#messages {
+  background: #fff;
+  padding: 1rem;
+  border-radius: 8px;
+}
+
+.message {
+  padding: 0.5rem;
+  margin-bottom: 0.5rem;
+  border-bottom: 1px solid #eee;
+}
+
+#messages input {
+  width: 80%;
+  padding: 0.5rem;
+  margin-right: 0.5rem;
+  font-size: 1rem;
+}
+
+#messages button {
+  padding: 0.5rem 1rem;
+  background: #1877f2;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+/* CSS END */
+
+  </style>
+</head>
+<body>
+  <header>
+    <h1>MyMedia</h1>
+  </header>
+  <nav>
+    <button onclick="showSection('feed')">Feed</button>
+    <button onclick="showSection('friends')">Friends</button>
+    <button onclick="showSection('messages')">Messages</button>
+    <button onclick="showSection('notifications')">Notifications</button>
+  </nav>
+  <main>
+    <section id="login" class="active">
+      <form onsubmit="loginUser(event)">
+        <h2>Login</h2>
+        <input type="text" id="username" placeholder="Username" required>
+        <input type="password" id="password" placeholder="Password" required>
+        <button type="submit">Login</button>
+      </form>
+    </section><section id="feed">
+  <h2>News Feed</h2>
+  <div class="feed-post">
+    <h3>John Doe</h3>
+    <p>This is my first post on MyMedia!</p>
+  </div>
+  <div class="feed-post">
+    <h3>Jane Smith</h3>
+    <p>Enjoying the new app design!</p>
+  </div>
+</section>
+
+<section id="friends">
+  <h2>Friend Requests</h2>
+  <div class="friend-request">
+    <span>Alex sent you a friend request.</span>
+    <div>
+      <button>Accept</button>
+      <button>Decline</button>
+    </div>
+  </div>
+</section>
+
+<section id="messages">
+  <h2>Messenger</h2>
+  <div class="message">
+    <strong>Alex:</strong> Hey, how are you?
+  </div>
+  <input type="text" placeholder="Type a message">
+  <button>Send</button>
+</section>
+
+<section id="notifications">
+  <h2>Notifications</h2>
+  <div class="notification">
+    You have 2 new friend requests.
+  </div>
+</section>
+
+  </main>  <script>
+    function showSection(id) {
+      document.querySelectorAll('main section').forEach(section => {
+        section.classList.remove('active');
+      });
+      document.getElementById(id).classList.add('active');
+    }
+
+    function loginUser(event) {
+      event.preventDefault();
+      showSection('feed');
+    }
+  </script></body>
+</html>function showSection(id) {
+  const sections = document.querySelectorAll("section");
+  sections.forEach(section => {
+    section.style.display = "none";
+  });
+  document.getElementById(id).style.display = "block";
+}
+
+function post() {
+  const textarea = document.querySelector("textarea");
+  const postText = textarea.value;
+  if (postText.trim() === "") {
+    alert("Write something first!");
+    return;
+  }
+
+  const postDiv = document.createElement("div");
+  postDiv.textContent = postText;
+  postDiv.style.padding = "10px";
+  postDiv.style.margin = "10px 0";
+  postDiv.style.background = "#fff";
+  postDiv.style.border = "1px solid #ccc";
+
+  document.getElementById("posts").prepend(postDiv);
+  textarea.value = "";
+}
+
+function logout() {
+  alert("Logging out...");
+}
+
+function changePassword() {
+  prompt("Enter new password:");
+}
+ 
